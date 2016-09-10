@@ -4,6 +4,8 @@ import WeatherMessage from 'WeatherMessage';
 import WeatherForm from 'WeatherForm';
 import openWeatherMap from 'openWeatherMap';
 
+import ErrorModal from 'ErrorModal';
+
 class Weather extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,10 @@ class Weather extends Component {
   handleSearch(location) {
     let that = this;
 
-    this.setState({ isLoading: true});
+    this.setState({
+      isLoading: true,
+      errorMessage: undefined
+    });
 
     openWeatherMap.getTemp(location).then(function (temp) {
       that.setState({
@@ -24,14 +29,16 @@ class Weather extends Component {
         temp,
         isLoading: false
       });
-    }, function (errorMessage) {
-      that.setState({ isLoading: false });
-      alert(errorMessage);
+    }, function (e) {
+      that.setState({
+        isLoading: false,
+        errorMessage: e.message
+      });
     });
   };
 
   render() {
-    let {isLoading, temp, location} = this.state;
+    let {isLoading, temp, location, errorMessage} = this.state;
 
     function renderMessage() {
       if (isLoading) {
@@ -41,11 +48,20 @@ class Weather extends Component {
       }
     };
 
+    function renderError() {
+      if (typeof errorMessage === 'string') {
+        return (
+          <ErrorModal title="Search Failed" message={errorMessage}/>
+        )
+      }
+    };
+
     return (
       <div>
         <h1 className="text-center">Weather</h1>
         <WeatherForm onSearch={this.handleSearch.bind(this)} />
         {renderMessage()}
+        {renderError()}
       </div>
     );
   }
