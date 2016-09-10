@@ -25,7 +25,9 @@ class WeatherForm extends Component {
           <input type="text" ref="location" placeholder="Enter city name" />
         </div>
         <div>
-          <button>Get Weather</button>
+          <button className="hollow button expanded">
+            Get Weather
+          </button>
         </div>
       </form>
     );
