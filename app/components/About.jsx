@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const About = (props) => {
   return (
     <div>
-      <h1 className="text-center">About</h1>
+      <h1 className="text-center page-title">About</h1>
       <p>This is the React Weather app from
         <em>'The Complete React web app developer course'</em>
       </p>

@@ -20,16 +20,18 @@ class WeatherForm extends Component {
 
   render() {
     return (
-      <form onSubmit = {this.onFormSubmit}>
-        <div>
-          <input type="text" ref="location" placeholder="Enter city name" />
-        </div>
-        <div>
-          <button className="hollow button expanded">
-            Get Weather
-          </button>
-        </div>
-      </form>
+      <div>
+        <form onSubmit = {this.onFormSubmit}>
+          <div>
+            <input type="search" ref="location" placeholder="Search Weather by city" />
+          </div>
+          <div>
+            <button className="hollow button expanded">
+              Get Weather
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -1,0 +1,30 @@
+.page-title {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+input[type=search] {
+  box-shadow: none;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #909;
+    font-weight: 600;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #909;
+   opacity:  1;
+   font-weight: 600;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #909;
+   opacity:  1;
+   font-weight: 600;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #909;
+   font-weight: 600;
+}
