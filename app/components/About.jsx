@@ -3,8 +3,18 @@ import React, { Component } from 'react';
 const About = (props) => {
   return (
     <div>
-      <h3>About</h3>
-      <p>Welcome to the About Page!</p>
+      <h1 className="text-center">About</h1>
+      <p>This is the React Weather app from 
+        'The Complete React web app developer course'</p>
+      <p>Some of the resources used were: </p>
+      <ul>
+        <li>
+          <a href="https://facebook.github.io/react">React</a>
+        </li>
+        <li>
+          <a href="http://openweathermap.org">Open Weather Map</a>
+        </li>
+      </ul>
       <div>
         <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Nulla eget quam vel lacus faucibus dignissim.
